@@ -70,7 +70,7 @@ class UserController extends Controller
 
         $ads = Advertisement::where('user_id', $userId)->paginate(2);
 
-        return view('listing.dashboard', [
+        return view('user.dashboard', [
             'ads' => $ads,
             'adCategories' => $this->returnAllAdCategories(),
             'adImages' => $this->returnAllAdImages($ads)

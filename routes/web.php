@@ -48,7 +48,7 @@ Route::get('/add-listing', [ListingController::class, 'addListingPage'])->middle
 Route::post('/add-listing/create', [ListingController::class, 'create'])->middleware('auth');
 
 // My dashboard page
-Route::get('/dashboard', [ListingController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth');
 
 // Search
 Route::get('/search', [ListingController::class, 'search']);
