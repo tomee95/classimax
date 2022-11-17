@@ -14,12 +14,16 @@ class ListingController extends Controller
     {
         $adCategories = AdCategory::all();
 
-        $newestAds = Advertisement::latest()->limit(5)->get();
+        $newestAds = Advertisement::latest()->limit(6)->get();
+
+        $popularCategories = Advertisement::all()->countBy('ad_category_id');
 
         return view('index', [
             'adCategories' => $adCategories,
             'newestAds' => $newestAds,
-            'adImages' => $this->returnAllAdImages($newestAds)
+            'adImages' => $this->returnAllAdImages($newestAds),
+            'popularCategories' => $popularCategories,
+            'categoryIcons' => AdCategory::CATEGORY_ICONS
         ]);
     }
 

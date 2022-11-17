@@ -11,20 +11,11 @@
                         <div class="short-popular-category-list text-center">
                             <h2>Popular Categories</h2>
                             <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="/search?search_category=9"><i class="fa fa-bed"></i> Real Estate</a></li>
-                                {{--<li class="list-inline-item">--}}
-                                    {{--<a href="listing/category.html"><i class="fa fa-grav"></i> Fitness</a>--}}
-                                {{--</li>--}}
-                                <li class="list-inline-item">
-                                    <a href="/search?search_category=1"><i class="fa fa-car"></i> Cars</a>
-                                </li>
-                                {{--<li class="list-inline-item">--}}
-                                    {{--<a href="listing/category.html"><i class="fa fa-cutlery"></i> Restaurants</a>--}}
-                                {{--</li>--}}
-                                <li class="list-inline-item">
-                                    <a href="/search?search_category=3"><i class="fa fa-laptop"></i> Electronics</a>
-                                </li>
+                                @foreach($popularCategories as $categoryId => $adNumber)
+                                    <li class="list-inline-item">
+                                        <a href="/search?search_category={{ $categoryId }}"><i class="fa {{ $categoryIcons[$categoryId] }}"></i> {{ $adCategories[$categoryId - 1]['name'] }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
@@ -126,124 +117,11 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{--<div class="col-sm-12 col-lg-4">--}}
-                            {{--<!-- product card -->--}}
-                            {{--<div class="product-item bg-light">--}}
-                                {{--<div class="card">--}}
-                                    {{--<div class="thumb-content">--}}
-                                        {{--<!-- <div class="price">$200</div> -->--}}
-                                        {{--<a href="listing/single.html">--}}
-                                            {{--<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">--}}
-                                        {{--</a>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="card-body">--}}
-                                        {{--<h4 class="card-title"><a href="listing/single.html">Full Study Table Combo</a></h4>--}}
-                                        {{--<ul class="list-inline product-meta">--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/category.html"><i class="fa fa-calendar"></i>26th December</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                        {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>--}}
-                                        {{--<div class="product-ratings">--}}
-                                            {{--<ul class="list-inline">--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item"><i class="fa fa-star"></i></li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-
-
-                        {{--</div>--}}
-                        {{--<div class="col-sm-12 col-lg-4">--}}
-                            {{--<!-- product card -->--}}
-                            {{--<div class="product-item bg-light">--}}
-                                {{--<div class="card">--}}
-                                    {{--<div class="thumb-content">--}}
-                                        {{--<!-- <div class="price">$200</div> -->--}}
-                                        {{--<a href="listing/single.html">--}}
-                                            {{--<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">--}}
-                                        {{--</a>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="card-body">--}}
-                                        {{--<h4 class="card-title"><a href="listing/single.html">11inch Macbook Air</a></h4>--}}
-                                        {{--<ul class="list-inline product-meta">--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/category.html"><i class="fa fa-calendar"></i>26th December</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                        {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>--}}
-                                        {{--<div class="product-ratings">--}}
-                                            {{--<ul class="list-inline">--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item"><i class="fa fa-star"></i></li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-
-
-                        {{--</div>--}}
-                        {{--<div class="col-sm-12 col-lg-4">--}}
-                            {{--<!-- product card -->--}}
-                            {{--<div class="product-item bg-light">--}}
-                                {{--<div class="card">--}}
-                                    {{--<div class="thumb-content">--}}
-                                        {{--<!-- <div class="price">$200</div> -->--}}
-                                        {{--<a href="listing/single.html">--}}
-                                            {{--<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">--}}
-                                        {{--</a>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="card-body">--}}
-                                        {{--<h4 class="card-title"><a href="listing/single.html">Full Study Table Combo</a></h4>--}}
-                                        {{--<ul class="list-inline product-meta">--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="list-inline-item">--}}
-                                                {{--<a href="listing/category.html"><i class="fa fa-calendar"></i>26th December</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                        {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>--}}
-                                        {{--<div class="product-ratings">--}}
-                                            {{--<ul class="list-inline">--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item selected"><i class="fa fa-star"></i></li>--}}
-                                                {{--<li class="list-inline-item"><i class="fa fa-star"></i></li>--}}
-                                            {{--</ul>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-
-
-                        {{--</div>--}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!--==========================================
     =            All Categories Section            =
@@ -261,128 +139,22 @@
                     </div>
                     <div class="row">
                         <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-laptop icon-bg-1"></i>
-                                    <h4>Electronics</h4>
+                        @foreach($adCategories as $cat)
+                            <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
+                                <div class="category-block">
+                                    <div class="header">
+                                        <i class="fa {{ $categoryIcons[$cat->id] }} icon-bg-{{ $cat->id }}"></i>
+                                        <h4>{{ $cat->name }}</h4>
+                                    </div>
+                                    <ul class="category-list">
+                                        <li><a href="#">Sub-Category 1 <span>{{ rand(50, 550) }}</span></a></li>
+                                        <li><a href="#">Sub-Category 2 <span>233</span></a></li>
+                                        <li><a href="#">Sub-Category 3 <span>183</span></a></li>
+                                        <li><a href="#">Sub-Category 4 <span>343</span></a></li>
+                                    </ul>
                                 </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Laptops <span>93</span></a></li>
-                                    <li><a href="listing/category.html">Iphone <span>233</span></a></li>
-                                    <li><a href="listing/category.html">Microsoft <span>183</span></a></li>
-                                    <li><a href="listing/category.html">Monitors <span>343</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-apple icon-bg-2"></i>
-                                    <h4>Restaurants</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Cafe <span>393</span></a></li>
-                                    <li><a href="listing/category.html">Fast food <span>23</span></a></li>
-                                    <li><a href="listing/category.html">Restaurants <span>13</span></a></li>
-                                    <li><a href="listing/category.html">Food Track<span>43</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-home icon-bg-3"></i>
-                                    <h4>Real Estate</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Farms <span>93</span></a></li>
-                                    <li><a href="listing/category.html">Gym <span>23</span></a></li>
-                                    <li><a href="listing/category.html">Hospitals <span>83</span></a></li>
-                                    <li><a href="listing/category.html">Parolurs <span>33</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-shopping-basket icon-bg-4"></i>
-                                    <h4>Shoppings</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Mens Wears <span>53</span></a></li>
-                                    <li><a href="listing/category.html">Accessories <span>212</span></a></li>
-                                    <li><a href="listing/category.html">Kids Wears <span>133</span></a></li>
-                                    <li><a href="listing/category.html">It & Software <span>143</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-briefcase icon-bg-5"></i>
-                                    <h4>Jobs</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">It Jobs <span>93</span></a></li>
-                                    <li><a href="listing/category.html">Cleaning & Washing <span>233</span></a></li>
-                                    <li><a href="listing/category.html">Management <span>183</span></a></li>
-                                    <li><a href="listing/category.html">Voluntary Works <span>343</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-car icon-bg-6"></i>
-                                    <h4>Vehicles</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Bus <span>193</span></a></li>
-                                    <li><a href="listing/category.html">Cars <span>23</span></a></li>
-                                    <li><a href="listing/category.html">Motobike <span>33</span></a></li>
-                                    <li><a href="listing/category.html">Rent a car <span>73</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-                                <div class="header">
-                                    <i class="fa fa-paw icon-bg-7"></i>
-                                    <h4>Pets</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Cats <span>65</span></a></li>
-                                    <li><a href="listing/category.html">Dogs <span>23</span></a></li>
-                                    <li><a href="listing/category.html">Birds <span>113</span></a></li>
-                                    <li><a href="listing/category.html">Others <span>43</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-                        <!-- Category list -->
-                        <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-                            <div class="category-block">
-
-                                <div class="header">
-                                    <i class="fa fa-laptop icon-bg-8"></i>
-                                    <h4>Services</h4>
-                                </div>
-                                <ul class="category-list">
-                                    <li><a href="listing/category.html">Cleaning <span>93</span></a></li>
-                                    <li><a href="listing/category.html">Car Washing <span>233</span></a></li>
-                                    <li><a href="listing/category.html">Clothing <span>183</span></a></li>
-                                    <li><a href="listing/category.html">Business <span>343</span></a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /Category List -->
-
-
+                            </div> <!-- /Category List -->
+                        @endforeach
                     </div>
                 </div>
             </div>
