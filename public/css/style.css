@@ -2302,3 +2302,9 @@ form textarea {
 .font-150 {
   font-size: 150px;
 }
+
+.delete-button {
+  padding: 0;
+  border: none;
+  background: none;
+}

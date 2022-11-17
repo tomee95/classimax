@@ -118,150 +118,21 @@
                           </a>
                         </li>
                         <li class="list-inline-item">
-                          <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard.html">
-                            <i class="fa fa-trash"></i>
-                          </a>
+                          <form method="POST" action="/delete-ad/{{ $ad->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="delete-button">
+                              <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="/delete-ad/{{ $ad->id }}">
+                                <i class="fa fa-trash"></i>
+                              </a>
+                            </button>
+                          </form>
                         </li>
                       </ul>
                     </div>
                   </td>
                 </tr>
               @endforeach
-              {{--<tr>--}}
-
-                {{--<td class="product-thumb">--}}
-                  {{--<img width="80px" height="auto" src="images/products/products-2.jpg" alt="image description"></td>--}}
-                {{--<td class="product-details">--}}
-                  {{--<h3 class="title">Study Table Combo</h3>--}}
-                  {{--<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>--}}
-                  {{--<span><strong>Posted on: </strong><time>Feb 12, 2017</time> </span>--}}
-                  {{--<span class="status active"><strong>Status</strong>Active</span>--}}
-                  {{--<span class="location"><strong>Location</strong>USA</span>--}}
-                {{--</td>--}}
-                {{--<td class="product-category"><span class="categories">Laptops</span></td>--}}
-                {{--<td class="action" data-title="Action">--}}
-                  {{--<div class="">--}}
-                    {{--<ul class="list-inline justify-content-center">--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="../category.html">--}}
-                          {{--<i class="fa fa-eye"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard.html">--}}
-                          {{--<i class="fa fa-pencil"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard.html">--}}
-                          {{--<i class="fa fa-trash"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                    {{--</ul>--}}
-                  {{--</div>--}}
-                {{--</td>--}}
-              {{--</tr>--}}
-              {{--<tr>--}}
-                {{--<td class="product-thumb">--}}
-                  {{--<img width="80px" height="auto" src="images/products/products-3.jpg" alt="image description"></td>--}}
-                {{--<td class="product-details">--}}
-                  {{--<h3 class="title">Macbook Pro 15inch</h3>--}}
-                  {{--<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>--}}
-                  {{--<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>--}}
-                  {{--<span class="status active"><strong>Status</strong>Active</span>--}}
-                  {{--<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>--}}
-                {{--</td>--}}
-                {{--<td class="product-category"><span class="categories">Laptops</span></td>--}}
-                {{--<td class="action" data-title="Action">--}}
-                  {{--<div class="">--}}
-                    {{--<ul class="list-inline justify-content-center">--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="../category.html">--}}
-                          {{--<i class="fa fa-eye"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard.html">--}}
-                          {{--<i class="fa fa-pencil"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard.html">--}}
-                          {{--<i class="fa fa-trash"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                    {{--</ul>--}}
-                  {{--</div>--}}
-                {{--</td>--}}
-              {{--</tr>--}}
-              {{--<tr>--}}
-
-                {{--<td class="product-thumb">--}}
-                  {{--<img width="80px" height="auto" src="images/products/products-4.jpg" alt="image description"></td>--}}
-                {{--<td class="product-details">--}}
-                  {{--<h3 class="title">Macbook Pro 15inch</h3>--}}
-                  {{--<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>--}}
-                  {{--<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>--}}
-                  {{--<span class="status active"><strong>Status</strong>Active</span>--}}
-                  {{--<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>--}}
-                {{--</td>--}}
-                {{--<td class="product-category"><span class="categories">Laptops</span></td>--}}
-                {{--<td class="action" data-title="Action">--}}
-                  {{--<div class="">--}}
-                    {{--<ul class="list-inline justify-content-center">--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a data-toggle="tooltip" data-placement="top" title="View" class="view" href="../category.html">--}}
-                          {{--<i class="fa fa-eye"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard.html">--}}
-                          {{--<i class="fa fa-pencil"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard.html">--}}
-                          {{--<i class="fa fa-trash"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                    {{--</ul>--}}
-                  {{--</div>--}}
-                {{--</td>--}}
-              {{--</tr>--}}
-              {{--<tr>--}}
-
-                {{--<td class="product-thumb">--}}
-                  {{--<img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description"></td>--}}
-                {{--<td class="product-details">--}}
-                  {{--<h3 class="title">Macbook Pro 15inch</h3>--}}
-                  {{--<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>--}}
-                  {{--<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>--}}
-                  {{--<span class="status active"><strong>Status</strong>Active</span>--}}
-                  {{--<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>--}}
-                {{--</td>--}}
-                {{--<td class="product-category"><span class="categories">Laptops</span></td>--}}
-                {{--<td class="action" data-title="Action">--}}
-                  {{--<div class="">--}}
-                    {{--<ul class="list-inline justify-content-center">--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a href="../category.html" data-toggle="tooltip" data-placement="top" title="View" class="view">--}}
-                          {{--<i class="fa fa-eye"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="dashboard.html">--}}
-                          {{--<i class="fa fa-pencil"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                      {{--<li class="list-inline-item">--}}
-                        {{--<a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="dashboard.html">--}}
-                          {{--<i class="fa fa-trash"></i>--}}
-                        {{--</a>--}}
-                      {{--</li>--}}
-                    {{--</ul>--}}
-                  {{--</div>--}}
-                {{--</td>--}}
-              {{--</tr>--}}
               </tbody>
             </table>
 

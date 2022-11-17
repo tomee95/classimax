@@ -77,6 +77,18 @@ class UserController extends Controller
         ]);
     }
 
+    public function deleteAd(Advertisement $ad)
+    {
+        // Make sure logged in user is the owner of the ad we want to delete
+        if($ad->user_id != auth()->id()) {
+            abort('403', 'Unauthorized action');
+        }
+
+        $ad->delete();
+
+        return redirect('/dashboard')->with('message', 'Ad deleted successfully!');
+    }
+
     public function myProfile()
     {
         return view('user.user-profile');

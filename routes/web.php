@@ -50,6 +50,9 @@ Route::post('/add-listing/create', [ListingController::class, 'create'])->middle
 // My dashboard page
 Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth');
 
+// Delete ad
+Route::delete('/delete-ad/{ad}', [UserController::class, 'deleteAd'])->middleware('auth');
+
 // Search
 Route::get('/search', [ListingController::class, 'search']);
 
